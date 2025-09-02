@@ -1,0 +1,39 @@
+general {
+    colors = false
+    interval = 5
+}
+
+order += "disk /"
+order += "memory"
+order += "load"
+order += "cpu_usage"
+order += "volume master"
+order += "time"
+
+disk / {
+    format = "ROOT %used / %total"
+}
+
+memory {
+    format = "RAM %used / %total"
+}
+
+load {
+    format = "LOAD %1min %5min %15min"
+}
+
+cpu_usage {
+    format = "CPU %usage"
+}
+
+volume master {
+    format = "VOL %volume"
+    format_muted = "VOL M(%volume)"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
+
+time {
+    format = "%a %F %T"
+}
