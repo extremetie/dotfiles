@@ -38,10 +38,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 require("paq") {
     "savq/paq-nvim",
+    "windwp/nvim-autopairs",
     "norcalli/nvim-colorizer.lua",
     "rebelot/kanagawa.nvim",
 }
 
+require('nvim-autopairs').setup()
 require("colorizer").setup()
 
 require("kanagawa").setup({
