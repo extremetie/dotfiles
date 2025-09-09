@@ -2,14 +2,16 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
-vim.o.number = true
-vim.o.relativenumber = true
 vim.o.cursorline = true
 vim.o.cursorlineopt = "number"
+vim.o.list = true
+vim.o.listchars = "trail:·"
+vim.o.number = true
+vim.o.relativenumber = true
 vim.o.scrolloff = 4
+
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
 vim.o.splitbelow = true
 vim.o.splitright = true
@@ -43,7 +45,7 @@ require("paq") {
     "rebelot/kanagawa.nvim",
 }
 
-require('nvim-autopairs').setup()
+require("nvim-autopairs").setup()
 require("colorizer").setup()
 
 require("kanagawa").setup({
