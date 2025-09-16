@@ -14,16 +14,6 @@ cyan='%B%F{cyan}'
 reset='%b%f'
 PROMPT="[$cyan%n$reset@$cyan%m %~$reset]\$ "
 
-zle-keymap-select () {
-    if [[ $KEYMAP == vicmd ]]; then
-        echo -ne '\e[2 q'
-    else
-        echo -ne '\e[6 q'
-    fi
-}
-precmd_functions+=(zle-keymap-select)
-zle -N zle-keymap-select
-
 setopt globdots
 [ -d $XDG_CACHE_HOME/zsh ] || mkdir -p $XDG_CACHE_HOME/zsh
 autoload -Uz compinit && compinit -d $XDG_CACHE_HOME/zsh
