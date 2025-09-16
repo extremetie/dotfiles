@@ -19,13 +19,10 @@ vim.o.termguicolors = true
 vim.o.undofile = true
 vim.o.title = true
 
-vim.g.netrw_banner = false
-vim.g.netrw_bufsettings = 'nu rnu'
-
 vim.g.mapleader = ' '
 vim.keymap.set({ 'n', 'v' }, '<leader>y', "'+y")
 vim.keymap.set({ 'n', 'v' }, '<leader>p', "'+p")
-vim.keymap.set('n', '<leader>e', '<cmd>Explore<CR>')
+vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>')
 vim.keymap.set('n', '<leader>m', '<cmd>write | make<CR>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>')
@@ -38,11 +35,18 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 require('paq') {
-    'savq/paq-nvim',
+    'stevearc/oil.nvim',
+    'nvim-mini/mini.icons',
     'windwp/nvim-autopairs',
     'norcalli/nvim-colorizer.lua',
     'rebelot/kanagawa.nvim',
+    'savq/paq-nvim',
 }
+
+require('oil').setup({
+    view_options = { show_hidden = true },
+})
+require('mini.icons').setup()
 
 require('nvim-autopairs').setup()
 require('colorizer').setup()
