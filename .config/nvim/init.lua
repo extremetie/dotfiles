@@ -15,8 +15,9 @@ vim.o.title = true
 vim.o.undofile = true
 
 vim.g.mapleader = ' '
-vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
+vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d')
 vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p')
+vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>')
 vim.keymap.set('n', '<leader>m', '<cmd>write | make<CR>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
