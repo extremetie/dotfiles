@@ -50,6 +50,7 @@ bindsym $mod+s sticky toggle
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+f fullscreen toggle global
 
+bindsym $mod+a focus parent
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -99,8 +100,6 @@ bindsym $mod+b bar mode toggle
 bar {
     status_command i3status
     separator_symbol " │ "
-    tray_output primary
-    workspace_min_width 25
     position top
     modifier none
 
