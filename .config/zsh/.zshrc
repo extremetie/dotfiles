@@ -26,6 +26,16 @@ HISTFILE=$XDG_STATE_HOME/zsh/history
 HISTSIZE=10000
 SAVEHIST=10000
 
+zle-keymap-select () {
+    if [[ $KEYMAP == vicmd ]]; then
+        echo -ne '\e[2 q'
+    else
+        echo -ne '\e[6 q'
+    fi
+}
+precmd_functions+=(zle-keymap-select)
+zle -N zle-keymap-select
+
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey -M vicmd 'k' history-substring-search-up
