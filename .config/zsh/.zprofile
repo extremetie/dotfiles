@@ -1,1 +1,1 @@
-[ $(tty) = '/dev/tty1' ] && exec startx $(which i3)
+[ $(tty) = '/dev/tty1' ] && exec sway
