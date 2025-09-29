@@ -22,16 +22,14 @@ titlebar_padding 1
 
 floating_modifier Super
 
-set $lock swaylock -fuc '#000000'
-
 exec swayidle -w \
-    timeout 300 $lock \
+    timeout 300 'swaylock -fuc 000000' \
     timeout 300 'swaymsg "output * power off"' \
         resume 'swaymsg "output * power on"' \
-    before-sleep $lock
+    before-sleep 'swaylock -fuc 000000'
 
 bindsym Super+Shift+c reload
-bindsym Super+BackSpace exec $lock
+bindsym Super+BackSpace exec swaylock -fuc 000000
 bindsym Super+Shift+BackSpace exec swaymsg exit
 
 bindsym Super+Return exec alacritty msg create-window || alacritty
