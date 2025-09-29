@@ -1,15 +1,15 @@
 vim.o.expandtab = true
-vim.o.ignorecase = true
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
 vim.o.list = true
 vim.o.listchars = 'tab:→ ,trail:·,nbsp:␣'
+vim.o.scrolloff = 4
 vim.o.number = true
 vim.o.relativenumber = true
-vim.o.scrolloff = 4
-vim.o.shiftwidth = 4
+vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.splitbelow = true
 vim.o.splitright = true
-vim.o.tabstop = 4
 vim.o.termguicolors = true
 vim.o.title = true
 vim.o.undofile = true
@@ -22,21 +22,12 @@ vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>')
 vim.keymap.set('n', '<leader>m', '<cmd>write | make<CR>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
-require('paq') {
-    'stevearc/oil.nvim',
-    'nvim-mini/mini.icons',
-    'windwp/nvim-autopairs',
-    'norcalli/nvim-colorizer.lua',
-    'rebelot/kanagawa.nvim',
-    'savq/paq-nvim',
-}
-
 require('oil').setup({
     view_options = { show_hidden = true },
 })
-require('mini.icons').setup()
-require('nvim-autopairs').setup()
-require('colorizer').setup()
+
+require('mini.pairs').setup()
+
 require('kanagawa').setup({
     commentStyle = { italic = false },
     keywordStyle = { italic = false },
@@ -46,3 +37,10 @@ vim.cmd('highlight LineNr guibg=None')
 vim.cmd('highlight CursorLineNr guibg=None')
 vim.cmd('highlight SignColumn guibg=None')
 vim.cmd('highlight FoldColumn guibg=None')
+
+require('paq') {
+    'stevearc/oil.nvim',
+    'nvim-mini/mini.pairs',
+    'rebelot/kanagawa.nvim',
+    'savq/paq-nvim',
+}
