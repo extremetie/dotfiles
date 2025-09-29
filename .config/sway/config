@@ -34,7 +34,7 @@ bindsym Super+Shift+c reload
 bindsym Super+BackSpace exec $lock
 bindsym Super+Shift+BackSpace exec swaymsg exit
 
-bindsym Super+Return exec alacritty msg create-window
+bindsym Super+Return exec alacritty msg create-window || alacritty
 bindsym Super+d exec wmenu-run
 bindsym Super+Shift+q kill
 
