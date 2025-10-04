@@ -1,5 +1,4 @@
 general {
-    colors = false
     interval = 5
 }
 
@@ -8,6 +7,7 @@ order += "memory"
 order += "load"
 order += "cpu_usage"
 order += "volume master"
+order += "battery all"
 order += "time"
 
 disk / {
@@ -29,9 +29,14 @@ cpu_usage {
 volume master {
     format = "VOL %volume"
     format_muted = "VOL M(%volume)"
-    device = "default"
-    mixer = "Master"
-    mixer_idx = 0
+}
+
+battery all {
+    format = "%status %percentage %consumption"
+    format_down = ""
+    last_full_capacity = true
+    low_threshold = 10
+    threshold_type = percentage
 }
 
 time {
