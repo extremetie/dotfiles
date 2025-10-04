@@ -113,4 +113,5 @@ bar {
     modifier none
 }
 
+include device
 include /etc/sway/config.d/*
