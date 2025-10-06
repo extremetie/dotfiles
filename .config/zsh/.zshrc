@@ -1,5 +1,7 @@
 alias dots='git --git-dir=$HOME/.dots --work-tree=$HOME'
 alias vim='nvim'
+alias c='wl-copy'
+alias v='wl-paste'
 
 alias grep='grep --color=auto'
 alias ip='ip --color=auto'
