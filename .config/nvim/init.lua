@@ -24,6 +24,14 @@ vim.keymap.set('n', '<Esc>', '<cmd>set hlsearch!<CR>')
 
 vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>')
 
+require('paq') {
+    'savq/paq-nvim',
+    'stevearc/oil.nvim',
+    'nvim-mini/mini.pairs',
+    'nvim-mini/mini.icons',
+    'rebelot/kanagawa.nvim',
+}
+
 require('oil').setup({
     view_options = { show_hidden = true },
 })
@@ -40,11 +48,3 @@ vim.cmd('highlight LineNr guibg=None')
 vim.cmd('highlight CursorLineNr guibg=None')
 vim.cmd('highlight SignColumn guibg=None')
 vim.cmd('highlight FoldColumn guibg=None')
-
-require('paq') {
-    'stevearc/oil.nvim',
-    'nvim-mini/mini.pairs',
-    'nvim-mini/mini.icons',
-    'rebelot/kanagawa.nvim',
-    'savq/paq-nvim',
-}
