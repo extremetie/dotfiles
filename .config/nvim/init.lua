@@ -29,6 +29,7 @@ require('oil').setup({
 })
 
 require('mini.pairs').setup()
+require('mini.icons').setup()
 
 require('kanagawa').setup({
     commentStyle = { italic = false },
@@ -43,6 +44,7 @@ vim.cmd('highlight FoldColumn guibg=None')
 require('paq') {
     'stevearc/oil.nvim',
     'nvim-mini/mini.pairs',
+    'nvim-mini/mini.icons',
     'rebelot/kanagawa.nvim',
     'savq/paq-nvim',
 }
