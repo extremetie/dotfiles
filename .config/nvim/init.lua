@@ -13,14 +13,16 @@ vim.o.splitright = true
 vim.o.termguicolors = true
 vim.o.title = true
 vim.o.undofile = true
-
 vim.g.mapleader = ' '
+
 vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d')
 vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p')
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
+vim.keymap.set('n', '<leader>m', '<cmd>write|make<CR>')
+vim.keymap.set('n', '<leader>s', '<cmd>write|source<CR>')
+vim.keymap.set('n', '<Esc>', '<cmd>set hlsearch!<CR>')
+
 vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>')
-vim.keymap.set('n', '<leader>m', '<cmd>write | make<CR>')
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 require('oil').setup({
     view_options = { show_hidden = true },
