@@ -1,27 +1,24 @@
-vim.o.expandtab = true
-vim.o.shiftwidth = 4
-vim.o.tabstop = 4
-vim.o.list = true
-vim.o.listchars = 'tab:→ ,trail:·,nbsp:␣'
-vim.o.scrolloff = 4
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.splitbelow = true
-vim.o.splitright = true
-vim.o.termguicolors = true
-vim.o.title = true
-vim.o.undofile = true
-vim.g.mapleader = ' '
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.list = true
+vim.opt.listchars = { tab = '→ ', trail = '·', nbsp = '␣' }
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.scrolloff = 4
+vim.opt.path:append('**')
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.undofile = true
+vim.opt.title = true
 
+vim.g.mapleader = ' '
 vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d')
 vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p')
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
-vim.keymap.set('n', '<leader>m', '<cmd>write|make<CR>')
-vim.keymap.set('n', '<leader>s', '<cmd>write|source<CR>')
+vim.keymap.set('n', '<leader>m', '<cmd>update | make<CR>')
+vim.keymap.set('n', '<leader>o', '<cmd>update | source<CR>')
 vim.keymap.set('n', '<Esc>', '<cmd>set hlsearch!<CR>')
-
 vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>')
 
 require('paq') {
@@ -35,10 +32,8 @@ require('paq') {
 require('oil').setup({
     view_options = { show_hidden = true },
 })
-
 require('mini.pairs').setup()
 require('mini.icons').setup()
-
 require('kanagawa').setup({
     commentStyle = { italic = false },
     keywordStyle = { italic = false },
