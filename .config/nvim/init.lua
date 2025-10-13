@@ -16,10 +16,12 @@ vim.g.mapleader = ' '
 vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d')
 vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p')
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
+vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>')
+vim.keymap.set('n', '<leader>w', '<cmd>update<CR>')
+vim.keymap.set('n', '<leader>q', '<cmd>update | bdelete<CR>')
 vim.keymap.set('n', '<leader>m', '<cmd>update | make<CR>')
 vim.keymap.set('n', '<leader>o', '<cmd>update | source<CR>')
 vim.keymap.set('n', '<Esc>', '<cmd>set hlsearch!<CR>')
-vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>')
 
 require('paq') {
     'savq/paq-nvim',
