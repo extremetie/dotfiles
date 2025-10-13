@@ -13,19 +13,24 @@ vim.opt.undofile = true
 vim.opt.title = true
 
 vim.g.mapleader = ' '
+vim.keymap.set('n', '<Esc>', '<cmd>set hlsearch!<CR>')
 vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d')
 vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p')
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
-vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>')
 vim.keymap.set('n', '<leader>w', '<cmd>update<CR>')
 vim.keymap.set('n', '<leader>q', '<cmd>update | bdelete<CR>')
 vim.keymap.set('n', '<leader>m', '<cmd>update | make<CR>')
 vim.keymap.set('n', '<leader>o', '<cmd>update | source<CR>')
-vim.keymap.set('n', '<Esc>', '<cmd>set hlsearch!<CR>')
+vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>')
+vim.keymap.set('n', '<leader>f', '<cmd>Pick files<CR>')
+vim.keymap.set('n', '<leader>g', '<cmd>Pick grep_live<CR>')
+vim.keymap.set('n', '<leader>r', '<cmd>Pick buffers<CR>')
+vim.keymap.set('n', '<leader>h', '<cmd>Pick help<CR>')
 
 require('paq') {
     'savq/paq-nvim',
     'stevearc/oil.nvim',
+    'nvim-mini/mini.pick',
     'nvim-mini/mini.pairs',
     'nvim-mini/mini.icons',
     'rebelot/kanagawa.nvim',
@@ -34,6 +39,7 @@ require('paq') {
 require('oil').setup({
     view_options = { show_hidden = true },
 })
+require('mini.pick').setup()
 require('mini.pairs').setup()
 require('mini.icons').setup()
 require('kanagawa').setup({
