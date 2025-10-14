@@ -1,5 +1,4 @@
 seat seat0 hide_cursor 5000
-
 input type:pointer {
     accel_profile flat
     pointer_accel -0.3
@@ -10,7 +9,6 @@ input type:keyboard {
     repeat_delay 300
     repeat_rate 50
 }
-
 output * allow_tearing yes
 
 default_border pixel
@@ -20,21 +18,11 @@ hide_edge_borders --i3 smart
 title_align center
 titlebar_padding 1
 
-floating_modifier Super
-
 exec swayidle -w \
     timeout 300 'swaylock -fuc 000000' \
     timeout 300 'swaymsg "output * power off"' \
         resume 'swaymsg "output * power on"' \
     before-sleep 'swaylock -fuc 000000'
-
-bindsym Super+Shift+c reload
-bindsym Super+BackSpace exec swaylock -fuc 000000
-bindsym Super+Shift+BackSpace exec swaymsg exit
-
-bindsym Super+Return exec alacritty msg create-window || alacritty
-bindsym Super+d exec wmenu-run
-bindsym Super+Shift+q kill
 
 bindsym --locked XF86AudioMute exec \
     pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -51,15 +39,21 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym Print exec grim
 bindsym Shift+Print exec slurp | grim -g -
 
+bindsym Super+d exec wmenu-run
+bindsym Super+Return exec alacritty msg create-window || alacritty
+
+bindsym Super+Shift+q kill
+bindsym Super+Shift+c reload
+bindsym Super+BackSpace exec swaylock -fuc 000000
+bindsym Super+Shift+BackSpace exec swaymsg exit
+
 bindsym Super+f fullscreen
 bindsym Super+Shift+f fullscreen global
 
+floating_modifier Super
 bindsym Super+s sticky toggle
 bindsym Super+space focus mode_toggle
 bindsym Super+Shift+space floating toggle
-
-bindsym Super+grave scratchpad show
-bindsym Super+Shift+grave move scratchpad
 
 bindsym Super+w split toggle
 bindsym Super+e layout toggle all
@@ -75,10 +69,13 @@ bindsym Super+Shift+j move down
 bindsym Super+Shift+k move up
 bindsym Super+Shift+l move right
 
-bindsym Super+Control+h resize shrink width
-bindsym Super+Control+j resize grow height
-bindsym Super+Control+k resize shrink height
-bindsym Super+Control+l resize grow width
+bindsym Super+Ctrl+h resize shrink width
+bindsym Super+Ctrl+j resize grow height
+bindsym Super+Ctrl+k resize shrink height
+bindsym Super+Ctrl+l resize grow width
+
+bindsym Super+grave scratchpad show
+bindsym Super+Shift+grave move scratchpad
 
 bindsym Super+Tab workspace back_and_forth
 bindsym Super+Shift+Tab move container to workspace back_and_forth
@@ -113,5 +110,5 @@ bar {
     modifier none
 }
 
-include device
+include local
 include /etc/sway/config.d/*
