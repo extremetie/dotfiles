@@ -6,14 +6,14 @@ vim.opt.list = true
 vim.opt.listchars = { tab = '→ ', trail = '·', nbsp = '␣' }
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.signcolumn = 'number'
+vim.opt.signcolumn = 'no'
 vim.opt.winborder = 'single'
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.undofile = true
 vim.opt.title = true
 
-vim.lsp.enable({ 'clangd' })
+vim.lsp.enable({ 'clangd', 'pylsp' })
 vim.diagnostic.config({ virtual_text = true })
 
 vim.g.mapleader = ' '
@@ -52,7 +52,4 @@ require('kanagawa').setup({
 vim.cmd('colorscheme kanagawa-dragon')
 vim.cmd('highlight LineNr guibg=None')
 vim.cmd('highlight CursorLineNr guibg=None')
-vim.cmd('highlight SignColumn guibg=None')
-vim.cmd('highlight DiagnosticSignWarn guibg=None')
-vim.cmd('highlight DiagnosticSignError guibg=None')
 vim.cmd('highlight FoldColumn guibg=None')
