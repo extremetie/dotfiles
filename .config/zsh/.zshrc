@@ -3,17 +3,17 @@ alias vim='nvim'
 alias c='wl-copy'
 alias v='wl-paste'
 
-alias grep='grep --color=auto'
-alias ip='ip --color=auto'
-alias ls='ls --color=auto'
 alias rm='rm -I'
-
-bindkey -v
-KEYTIMEOUT=1
+alias ls='ls -p --color=auto'
+alias ll='ls -plarth --color=auto'
+alias grep='grep --color=auto'
 
 cyan='%B%F{cyan}'
 reset='%b%f'
 PROMPT="[$cyan%n$reset@$cyan%m %~$reset]\$ "
+
+bindkey -v
+KEYTIMEOUT=1
 
 setopt globdots
 [ -d $XDG_CACHE_HOME/zsh ] || mkdir -p $XDG_CACHE_HOME/zsh
