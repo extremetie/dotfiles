@@ -11,6 +11,8 @@ input type:keyboard {
 }
 output * allow_tearing yes
 
+font CommitMono Nerd Font 10
+
 default_border pixel
 default_floating_border pixel
 hide_edge_borders --i3 smart
