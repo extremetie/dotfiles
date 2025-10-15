@@ -4,6 +4,8 @@ vim.opt.tabstop = 4
 vim.opt.scrolloff = 4
 vim.opt.list = true
 vim.opt.listchars = { tab = '→ ', trail = '·', nbsp = '␣' }
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = 'no'
