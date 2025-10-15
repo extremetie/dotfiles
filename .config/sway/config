@@ -6,7 +6,7 @@ input type:pointer {
 input type:keyboard {
     xkb_layout pl
     xkb_options caps:escape
-    repeat_delay 300
+    repeat_delay 250
     repeat_rate 50
 }
 output * allow_tearing yes
@@ -39,8 +39,13 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym Print exec grim
 bindsym Shift+Print exec slurp | grim -g -
 
-bindsym Super+d exec wmenu-run
-bindsym Super+Return exec alacritty msg create-window || alacritty
+bindsym Super+r exec wmenu-run
+bindsym Super+w exec firefox
+bindsym Super+e exec thunar
+bindsym Super+Return exec \
+    alacritty msg create-window || alacritty
+bindsym Super+Shift+Return exec \
+    alacritty msg create-window -e nvim || alacritty -e nvim
 
 bindsym Super+Shift+q kill
 bindsym Super+Shift+c reload
@@ -51,12 +56,12 @@ bindsym Super+f fullscreen
 bindsym Super+Shift+f fullscreen global
 
 floating_modifier Super
-bindsym Super+s sticky toggle
 bindsym Super+space focus mode_toggle
 bindsym Super+Shift+space floating toggle
+bindsym Super+Shift+s sticky toggle
 
-bindsym Super+w split toggle
-bindsym Super+e layout toggle all
+bindsym Super+s split toggle
+bindsym Super+d layout toggle all
 
 bindsym Super+a focus parent
 bindsym Super+h focus left
@@ -69,16 +74,18 @@ bindsym Super+Shift+j move down
 bindsym Super+Shift+k move up
 bindsym Super+Shift+l move right
 
-bindsym Super+Ctrl+h resize shrink width
-bindsym Super+Ctrl+j resize grow height
-bindsym Super+Ctrl+k resize shrink height
-bindsym Super+Ctrl+l resize grow width
+bindsym Super+Alt+h resize shrink width
+bindsym Super+Alt+j resize grow height
+bindsym Super+Alt+k resize shrink height
+bindsym Super+Alt+l resize grow width
 
 bindsym Super+grave scratchpad show
 bindsym Super+Shift+grave move scratchpad
 
 bindsym Super+Tab workspace back_and_forth
 bindsym Super+Shift+Tab move container to workspace back_and_forth
+
+bindsym Super+Shift+period move container to output next
 
 bindsym Super+1 workspace number 1
 bindsym Super+2 workspace number 2
