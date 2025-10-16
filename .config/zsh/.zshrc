@@ -1,11 +1,12 @@
 alias dots='git --git-dir=$HOME/.dots --work-tree=$HOME'
+alias src='source $ZDOTDIR/.zshrc'
+alias venv='source .venv/bin/activate'
 alias vim='nvim'
 alias c='wl-copy'
 alias v='wl-paste'
-
 alias rm='rm -I'
 alias ls='ls -p --color=auto'
-alias ll='ls -plarth --color=auto'
+alias ll='ls -plArth --color=auto'
 alias grep='grep --color=auto'
 
 cyan='%B%F{cyan}'
