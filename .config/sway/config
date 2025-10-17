@@ -43,7 +43,7 @@ bindsym Shift+Print exec slurp | grim -g -
 
 bindsym Super+r exec wmenu-run
 bindsym Super+w exec firefox
-bindsym Super+e exec thunar
+bindsym Super+e exec pcmanfm
 bindsym Super+Return exec \
     alacritty msg create-window || alacritty
 bindsym Super+Shift+Return exec \
