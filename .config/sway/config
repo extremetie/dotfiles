@@ -76,10 +76,10 @@ bindsym Super+Shift+j move down
 bindsym Super+Shift+k move up
 bindsym Super+Shift+l move right
 
-bindsym Super+Alt+h resize shrink width
-bindsym Super+Alt+j resize grow height
-bindsym Super+Alt+k resize shrink height
-bindsym Super+Alt+l resize grow width
+bindsym Super+Control+h resize shrink width
+bindsym Super+Control+j resize grow height
+bindsym Super+Control+k resize shrink height
+bindsym Super+Control+l resize grow width
 
 bindsym Super+grave scratchpad show
 bindsym Super+Shift+grave move scratchpad
