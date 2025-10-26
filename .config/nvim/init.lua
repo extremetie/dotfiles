@@ -48,7 +48,12 @@ require('paq') {
     'savq/paq-nvim',
 }
 
-require('oil').setup({ view_options = { show_hidden = true } })
+require('oil').setup({
+    columns = { 'permissions', 'size', 'mtime', 'icon' },
+    view_options = { show_hidden = true },
+    delete_to_trash = true,
+})
+
 require('mini.pick').setup()
 require('mini.pairs').setup()
 require('mini.icons').setup()
