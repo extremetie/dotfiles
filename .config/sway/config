@@ -1,3 +1,6 @@
+set $font 'CommitMono Nerd Font 10'
+set $black '#000000'
+
 seat seat0 hide_cursor 5000
 input type:pointer {
     accel_profile flat
@@ -11,20 +14,17 @@ input type:keyboard {
 }
 output * allow_tearing yes
 
-font CommitMono Nerd Font 10
-
-default_border pixel
-default_floating_border pixel
-hide_edge_borders --i3 smart
-
+font $font
 title_align center
 titlebar_padding 1
+default_border pixel
+hide_edge_borders --i3 smart
 
 exec swayidle -w \
-    timeout 300 'swaylock -fuc 000000' \
-    timeout 300 'swaymsg "output * power off"' \
-        resume 'swaymsg "output * power on"' \
-    before-sleep 'swaylock -fuc 000000'
+    timeout 300 "swaylock -fuc $black" \
+    timeout 300 "swaymsg 'output * power off'" \
+        resume "swaymsg 'output * power on'" \
+    before-sleep "swaylock -fuc $black"
 
 bindsym --locked XF86AudioMute exec \
     pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -41,17 +41,14 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym Print exec grim
 bindsym Shift+Print exec slurp | grim -g -
 
-bindsym Super+r exec wmenu-run
+bindsym Super+r exec wmenu-run -f $font
 bindsym Super+w exec firefox
 bindsym Super+e exec pcmanfm
-bindsym Super+Return exec \
-    alacritty msg create-window || alacritty
-bindsym Super+Shift+Return exec \
-    alacritty msg create-window -e nvim || alacritty -e nvim
+bindsym Super+Return exec alacritty msg create-window || alacritty
 
 bindsym Super+Shift+q kill
 bindsym Super+Shift+c reload
-bindsym Super+BackSpace exec swaylock -fuc 000000
+bindsym Super+BackSpace exec swaylock -fuc $black
 bindsym Super+Shift+BackSpace exec swaymsg exit
 
 bindsym Super+f fullscreen
