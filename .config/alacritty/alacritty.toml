@@ -4,8 +4,8 @@ bindings = [
 ]
 
 [font]
-normal = { family = 'CommitMono Nerd Font'}
-size = 14
+normal = { family = 'CommitMono Nerd Font' }
+size = 16
 
 [colors.primary]
 foreground = '#c5c9c5'
