@@ -34,7 +34,6 @@ require('paq') {
     'neovim/nvim-lspconfig',
     'stevearc/oil.nvim',
     'nvim-mini/mini.pick',
-    'nvim-mini/mini.pairs',
     'nvim-mini/mini.icons',
     'rebelot/kanagawa.nvim',
     'savq/paq-nvim',
@@ -43,11 +42,11 @@ require('paq') {
 require('oil').setup({
     columns = { 'permissions', 'size', 'mtime', 'icon' },
     view_options = { show_hidden = true },
+    skip_confirm_for_simple_edits = true,
     delete_to_trash = true,
 })
 
 require('mini.pick').setup()
-require('mini.pairs').setup()
 require('mini.icons').setup()
 
 require('kanagawa').setup({
