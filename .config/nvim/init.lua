@@ -19,16 +19,23 @@ vim.lsp.enable({ 'clangd', 'rust_analyzer', 'pylsp' })
 vim.diagnostic.config({ virtual_text = true })
 
 vim.g.mapleader = ' '
-vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d')
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
-vim.keymap.set('n', '<leader>m', '<cmd>update | make<CR>')
-vim.keymap.set('n', '<leader>o', '<cmd>update | source<CR>')
+vim.keymap.set({ 'n', 'v' }, '<leader>d', '"+d')
+vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p')
+vim.keymap.set('n', '<leader>a', '<cmd>e #<CR>')
 vim.keymap.set('n', '<leader>v', '<cmd>edit $MYVIMRC<CR>')
+vim.keymap.set('n', '<leader>w', '<cmd>update<CR>')
+vim.keymap.set('n', '<leader>q', '<cmd>update | quit<CR>')
+vim.keymap.set('n', '<leader>x', '<cmd>update | bdelete<CR>')
+vim.keymap.set('n', '<leader>o', '<cmd>update | source<CR>')
+vim.keymap.set('n', '<leader>m', '<cmd>update | make<CR>')
+vim.keymap.set('n', '<leader>E', '<cmd>Open .<CR>')
 vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>')
 vim.keymap.set('n', '<leader>f', '<cmd>Pick files<CR>')
 vim.keymap.set('n', '<leader>g', '<cmd>Pick grep_live<CR>')
 vim.keymap.set('n', '<leader>r', '<cmd>Pick buffers<CR>')
 vim.keymap.set('n', '<leader>h', '<cmd>Pick help<CR>')
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 require('paq') {
     'neovim/nvim-lspconfig',
