@@ -7,9 +7,9 @@ input type:pointer {
     pointer_accel -0.3
 }
 input type:keyboard {
-    xkb_layout 'pl, pl'
-    xkb_variant ', colemak_dh_ansi'
-    xkb_options 'grp:shifts_toggle, caps:escape'
+    xkb_layout pl,pl
+    xkb_variant ,colemak_dh_ansi
+    xkb_options grp:shift_caps_toggle
     repeat_delay 250
     repeat_rate 50
 }
