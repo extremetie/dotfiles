@@ -1,14 +1,21 @@
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
-vim.opt.scrolloff = 4
+vim.opt.wrap = false
 vim.opt.list = true
-vim.opt.listchars = { tab = '→ ', trail = '·', nbsp = '␣' }
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.opt.listchars = {
+    tab = '→ ',
+    trail = '·',
+    extends = '»',
+    precedes = '«',
+    nbsp = '␣',
+}
+vim.opt.scrolloff = 4
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = 'no'
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 vim.opt.winborder = 'single'
 vim.opt.splitbelow = true
 vim.opt.splitright = true
