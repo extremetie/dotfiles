@@ -6,9 +6,10 @@ alias vim='nvim'
 alias c='wl-copy'
 alias v='wl-paste'
 
+alias ls='ls -F --color=auto'
+alias ll='ls -lh'
+alias la='ll -A'
 alias rm='rm -I'
-alias ls='ls -p --color=auto'
-alias ll='ls -plArth --color=auto'
 alias grep='grep --color=auto'
 
 cyan='%B%F{cyan}'
