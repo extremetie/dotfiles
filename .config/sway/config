@@ -44,6 +44,8 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym Print exec grim
 bindsym Shift+Print exec slurp | grim -g -
 
+exec alacritty
+
 bindsym Super+r exec wmenu-run -f $font
 bindsym Super+w exec firefox
 bindsym Super+e exec pcmanfm
