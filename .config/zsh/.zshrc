@@ -14,7 +14,7 @@ alias grep='grep --color=auto'
 
 cyan='%B%F{cyan}'
 reset='%b%f'
-PROMPT="[$cyan%n$reset@$cyan%m %~$reset]$ "
+PROMPT="$cyan%n$reset@$cyan%m %~$reset$ "
 
 bindkey -v
 KEYTIMEOUT=1
